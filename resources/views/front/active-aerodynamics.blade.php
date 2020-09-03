@@ -14,7 +14,7 @@
 
 
 <!-- BEGIN SIDE_BAR -->
-@include('front.layout._header')
+@include('front.layout._sidebar')
 <!-- END SIDE_BAR -->
 
 

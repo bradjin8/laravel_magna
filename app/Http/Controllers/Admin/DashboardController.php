@@ -54,7 +54,7 @@ class DashboardController extends Controller
                         (SELECT DISTINCT ct.id as id, SUM(tr.duration_in_sec) as duration_in_sec FROM track_records tr JOIN categories ct ON ct.id = tr.category_id AND tr.type='page' GROUP BY tr.category_id) a
                         ON ctg.id = a.id
                       LEFT JOIN 
-                        (SELECT DISTINCT cct.id as id, COUNT(cct.slug) as visit_count FROM track_records tr JOIN categories cct ON cct.id = tr.category_id AND tr.type='page' AND tr.duration_in_sec=0 GROUP BY tr.category_id) aa
+                        (SELECT DISTINCT cct.id as id, COUNT(cct.slug) as visit_count FROM track_records trr JOIN categories cct ON cct.id = trr.category_id AND trr.type='page' AND trr.duration_in_sec=0 GROUP BY trr.category_id) aa
                         ON ctg.id = aa.id
                       LEFT JOIN
                         (SELECT DISTINCT cat.id as id, tra.file_name as file_name, SUM(tra.duration_in_sec) as duration_in_sec FROM track_records tra JOIN categories cat ON cat.id=tra.category_id AND tra.type='video' GROUP BY cat.id, tra.file_name) b
