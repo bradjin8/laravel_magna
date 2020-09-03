@@ -17,3 +17,16 @@
        DB_PASSWORD=root         # database password
     ```
 
+- Resources
+    - html pages are in `resources/views/front` directory
+    - all assets are in `public/front` directory
+    - due to the limitation of storage(github), omitted the contents of `media` and `content` directory.
+      copy the files into the directories.
+    
+    
+- URL
+    - after installing, please replace the base url in `.env` file as yours.
+        ```
+            APP_URL=http://localhost/
+        ```
+    - To see the dashboard, go to `/administrator`.
