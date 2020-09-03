@@ -48,11 +48,14 @@ class DashboardController extends Controller
         $this->arr_view_data['pdfs_by_count'] = $pdfs;
 
         $stations_statistics = DB::select(
-            "SELECT ctg.name as category, a.visit_count as total_visit_count, a.duration_in_sec as total_duration_in_sec, MAX(b.duration_in_sec) as most_duration_in_sec, MAX(c.download_count) as most_download_count FROM
+            "SELECT ctg.name as category, aa.visit_count as total_visit_count, a.duration_in_sec as total_duration_in_sec, MAX(b.duration_in_sec) as most_duration_in_sec, MAX(c.download_count) as most_download_count FROM
                       categories ctg
                       LEFT JOIN 
-                        (SELECT DISTINCT ct.id as id, COUNT(ct.slug) as visit_count, SUM(tr.duration_in_sec) as duration_in_sec FROM track_records tr JOIN categories ct ON ct.id = tr.category_id AND tr.type='page' AND tr.duration_in_sec=0 GROUP BY tr.category_id) a
+                        (SELECT DISTINCT ct.id as id, SUM(tr.duration_in_sec) as duration_in_sec FROM track_records tr JOIN categories ct ON ct.id = tr.category_id AND tr.type='page' GROUP BY tr.category_id) a
                         ON ctg.id = a.id
+                      LEFT JOIN 
+                        (SELECT DISTINCT ct.id as id, COUNT(ct.slug) as visit_count FROM track_records tr JOIN categories ct ON ct.id = tr.category_id AND tr.type='page' AND tr.duration_in_sec=0 GROUP BY tr.category_id) aa
+                        ON ctg.id = aa.id
                       LEFT JOIN
                         (SELECT DISTINCT cat.id as id, tra.file_name as file_name, SUM(tra.duration_in_sec) as duration_in_sec FROM track_records tra JOIN categories cat ON cat.id=tra.category_id AND tra.type='video' GROUP BY cat.id, tra.file_name) b
                         ON ctg.id = b.id
