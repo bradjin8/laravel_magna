@@ -44,4 +44,5 @@ Route::group(array('prefix' => 'administrator'), function() use($route_slug)
     $module_controller = "Admin\DashboardController@";
     Route::get('/', ['as' => $route_slug . 'index', 'uses' => $module_controller . 'index']);
     Route::get('/contacts', ['as' => $route_slug . 'contact', 'uses' => $module_controller . 'contacts']);
+    Route::get('/export', ['as' => $route_slug . 'contact', 'uses' => $module_controller . 'export']);
 });

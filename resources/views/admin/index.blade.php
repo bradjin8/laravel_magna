@@ -192,7 +192,7 @@
             </div>
             <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--4-col-desktop">
                 <div class="section_header"><span class="section_header_text">Most Downloaded</span>
-                    <button class="mdl-button mdl-js-button export-btn">Export</button>
+                    <a href="{{url('/administrator/export')}}" target="_blank" class="mdl-button mdl-js-button export-btn">Export</a>
                 </div>
                 <div class="mdl-card__supporting-text mdl-color-text--grey-600 below-section-header">
                     <ul class="demo-list-control mdl-list mdl-color--white">
