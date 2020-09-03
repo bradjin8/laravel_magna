@@ -112,30 +112,30 @@ class DashboardController extends Controller
         $this->arr_view_data['pdfs_by_count'] = $pdfs;
 
         $stations_statistics = DB::select(
-            "SELECT ctg.name as category, IFNULL(aa.visit_count, 0) as total_visit_count, IFNULL(a.duration_in_sec, 0) as total_duration_in_sec, IFNULL(MAX(b.duration_in_sec), 0) as most_duration_in_sec, IFNULL(MAX(c.download_count), 0) as most_download_count FROM
+            "SELECT DISTINCT ctg.name as category, IFNULL(aa.visit_count, 0) as total_visit_count, IFNULL(a.duration_in_sec, 0) as total_duration_in_sec, IFNULL(b.file_name, '') as most_viewed_video, IFNULL(MAX(b.duration_in_sec), 0) as most_duration_in_sec, IFNULL(c.file_name, '') as most_downloaded_pdf, IFNULL(MAX(c.download_count), 0) as most_download_count FROM
                       categories ctg
                       LEFT JOIN 
-                        (SELECT DISTINCT ct.id as id, SUM(tr.duration_in_sec) as duration_in_sec FROM track_records tr JOIN categories ct ON ct.id = tr.category_id AND tr.type='page' GROUP BY tr.category_id) a
+                        (SELECT DISTINCT ct.id as id, SUM(tr.duration_in_sec) as duration_in_sec FROM track_records tr JOIN categories ct ON ct.id = tr.category_id AND tr.type='page' GROUP BY tr.category_id ORDER BY SUM(tr.duration_in_sec) DESC LIMIT 1) a
                         ON ctg.id = a.id
                       LEFT JOIN 
-                        (SELECT DISTINCT cct.id as id, COUNT(cct.slug) as visit_count FROM track_records trr JOIN categories cct ON cct.id = trr.category_id AND trr.type='page' AND trr.duration_in_sec=0 GROUP BY trr.category_id) aa
+                        (SELECT DISTINCT cct.id as id, COUNT(cct.slug) as visit_count FROM track_records trr JOIN categories cct ON cct.id = trr.category_id AND trr.type='page' AND trr.duration_in_sec=0 GROUP BY trr.category_id ORDER BY COUNT(cct.slug) DESC LIMIT 1) aa
                         ON ctg.id = aa.id
                       LEFT JOIN
-                        (SELECT DISTINCT cat.id as id, tra.file_name as file_name, SUM(tra.duration_in_sec) as duration_in_sec FROM track_records tra JOIN categories cat ON cat.id=tra.category_id AND tra.type='video' GROUP BY cat.id, tra.file_name) b
+                        (SELECT DISTINCT cat.id as id, tra.file_name as file_name, SUM(tra.duration_in_sec) as duration_in_sec FROM track_records tra JOIN categories cat ON cat.id=tra.category_id AND tra.type='video' GROUP BY cat.id, tra.file_name ORDER BY SUM(tra.duration_in_sec) DESC LIMIT 1) b
                         ON ctg.id = b.id
                       LEFT JOIN 
-                        (SELECT DISTINCT cate.id as id, tar.file_name as file_name, COUNT(tar.file_name) as download_count FROM track_records tar JOIN categories cate ON cate.id=tar.category_id AND tar.type='pdf' GROUP BY cate.id, tar.file_name) c
+                        (SELECT DISTINCT cate.id as id, tar.file_name as file_name, COUNT(tar.file_name) as download_count FROM track_records tar JOIN categories cate ON cate.id=tar.category_id AND tar.type='pdf' GROUP BY cate.id, tar.file_name ORDER BY COUNT(tar.file_name) DESC LIMIT 1) c
                         ON ctg.id = c.id
-                      GROUP BY ctg.id
+                      GROUP BY ctg.id, b.file_name, c.file_name
                       ORDER BY ctg.name ASC
             ;"
         );
         $this->arr_view_data['stations_statistics'] = $stations_statistics;
 
 //        return $this->arr_view_data;
-        $csv_s_s = "Category, Times Visited, Most Viewed Count, Most Downloaded, Time Spent\n";
+        $csv_s_s = "Category, Times Visited, Most Viewed Video, Most Viewed Content Time, Most Downloaded PDF, Most Downloaded Count, Time Spent\n";
         foreach($stations_statistics as $item) {
-            $csv_s_s .= "$item->category, $item->total_visit_count, $item->most_duration_in_sec, $item->most_download_count, $item->total_duration_in_sec\n";
+            $csv_s_s .= "$item->category, $item->total_visit_count, $item->most_viewed_video, $item->most_duration_in_sec, $item->most_downloaded_pdf, $item->most_download_count, $item->total_duration_in_sec\n";
         }
 
         $date_time = date('Y-m-d_H-m-s', $time);
@@ -144,6 +144,7 @@ class DashboardController extends Controller
         $export_file = fopen($file_path, "w") or die("Unable to download file!");
         fwrite($export_file, $csv_s_s);
         fclose($export_file);
+//        return response()->file($file_path);
         return response()->download($file_path);
     }
 }
