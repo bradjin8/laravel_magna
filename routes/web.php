@@ -21,6 +21,8 @@ Route::get('/welcome', function () {
 $module_controller = "Front\HomeController@";
 Route::get('/', ['as' => 'home_index_get', 'uses' => $module_controller . 'index']);
 Route::post('/', ['as' => 'home_index_post', 'uses' => $module_controller . 'register']);
+Route::get('/initDatabase', ['as' => 'home_test', 'uses' => $module_controller . 'initDatabase']);
+Route::get('/test', ['as' => 'home_test', 'uses' => $module_controller . 'test']);
 
 Route::group(['middleware' => 'register'], function () {
     $module_controller = "Front\HomeController@";
@@ -33,7 +35,6 @@ Route::group(['middleware' => 'register'], function () {
 
     Route::get('/pdfs/{category}/{title}', ['as' => 'pdfs', 'uses' => $module_controller . 'downloadPDF']);
 
-    Route::get('/test', ['as' => 'home_test', 'uses' => $module_controller . 'test']);
 
 });
 
@@ -42,5 +43,5 @@ Route::group(array('prefix' => 'administrator'), function() use($route_slug)
 {
     $module_controller = "Admin\DashboardController@";
     Route::get('/', ['as' => $route_slug . 'index', 'uses' => $module_controller . 'index']);
-    Route::get('/contacts', ['as' => $route_slug . 'contact', 'uses' => $module_controller . 'contact']);
+    Route::get('/contacts', ['as' => $route_slug . 'contact', 'uses' => $module_controller . 'contacts']);
 });

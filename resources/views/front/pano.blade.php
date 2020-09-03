@@ -236,14 +236,14 @@
 <script type="text/javascript">
     const welcomeVideo = document.querySelector('#welcome-screen')
     welcomeVideo.onclick = () => {
-        welcomeVideo.src = "{{url('/public/front/media')}}/welcome/welcome.mp4"
+        welcomeVideo.src = "{{url('/public/front/media')}}/welcome.mp4"
         welcomeVideo.controls = true
         welcomeVideo.muted = undefined
         welcomeVideo.loop = undefined
         welcomeVideo.onended = () => {
             welcomeVideo.onended = () => {
             }
-            welcomeVideo.src = "{{url('/public/front/media')}}/welcome/welcome-attract.mp4"
+            welcomeVideo.src = "{{url('/public/front/media')}}/welcome-attract.mp4"
             welcomeVideo.controls = undefined
             welcomeVideo.muted = true
             welcomeVideo.loop = true

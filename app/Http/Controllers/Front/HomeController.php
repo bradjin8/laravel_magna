@@ -13,6 +13,8 @@ use App\Models\CategoryModel;
 use App\Models\TrackRecordModel;
 use App\Models\VisitorModel;
 use Illuminate\Http\Request;
+use App\Utils\AppInitializer;
+use Illuminate\Support\Facades\Schema;
 
 class HomeController extends Controller
 {
@@ -42,8 +44,21 @@ class HomeController extends Controller
         $this->visitorModel = $visitorModel;
     }
 
+    public function initDatabase()
+    {
+        AppInitializer::initDatabase();
+        return 'database initialized';
+    }
+
+    public function test()
+    {
+        return 'test';
+    }
+
     public function index()
     {
+        AppInitializer::initDatabase();
+
         session(['lastController' => 'Index', 'lastTime' => time(),]);
         return view($this->module_view_folder . '.index');
     }
@@ -106,8 +121,7 @@ class HomeController extends Controller
         if ($type == 'pdf') {
             $record = new TrackRecordModel(['category_id' => $category_id, 'type' => $type, 'duration_in_sec' => 0, 'file_name' => $file, 'visitor_id' => $visitor_id]);
             $record->save();
-        }
-        else if ($type == 'page') {
+        } else if ($type == 'page') {
             $record = new TrackRecordModel(['category_id' => $category_id, 'type' => $type, 'duration_in_sec' => 0, 'file_name' => $file, 'visitor_id' => $visitor_id]);
             $record->save();
         }
@@ -209,8 +223,4 @@ class HomeController extends Controller
 
     }
 
-    public function test()
-    {
-        return url('/public');
-    }
 }

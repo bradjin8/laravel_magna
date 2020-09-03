@@ -13,6 +13,8 @@ use App\Http\Controllers\Controller;
 use App\Models\CategoryModel;
 use App\Models\TrackRecordModel;
 use Illuminate\Support\Facades\DB;
+use App\Utils\AppInitializer;
+use Illuminate\Support\Facades\Schema;
 
 class DashboardController extends Controller
 {
@@ -29,7 +31,15 @@ class DashboardController extends Controller
         $this->trackRecordModel = $trackRecordModel;
     }
 
-    public function index() {
+    function __checkDatabase()
+    {
+        AppInitializer::initDatabase();
+    }
+
+    public function index()
+    {
+        $this->__checkDatabase();
+
         $arr_categories = $this->categoryModel->all();
 
         $this->arr_view_data['categories'] = $arr_categories;
@@ -70,5 +80,10 @@ class DashboardController extends Controller
 
 
         return view($this->module_view_folder . '.index', $this->arr_view_data);
+    }
+
+    public function contacts()
+    {
+        return view($this->module_view_folder . '.contacts');
     }
 }

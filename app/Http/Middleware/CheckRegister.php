@@ -8,17 +8,17 @@
 
 namespace App\Http\Middleware;
 
+use App\Utils\AppInitializer;
 use Closure;
+use Illuminate\Support\Facades\Schema;
 
 class CheckRegister
 {
-    public function handle($request, Closure $next) {
-        if (
-//            !$request->session()->exist('relationship') ||
-//            !$request->session()->exist('country') ||
-//            !$request->session()->exist('how')
-                session('relationship') == null
-        ) {
+    public function handle($request, Closure $next)
+    {
+        AppInitializer::initDatabase();
+
+        if (session('relationship') == null) {
             return redirect('/');
         }
 
