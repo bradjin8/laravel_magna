@@ -1,0 +1,128 @@
+.open-menu-drawer {
+  position: fixed;
+  top: calc(50vh - 36px);
+  left: 0;
+  width: 32px;
+  height: 72px;
+  cursor: pointer;
+  background-color: #DF0301;
+  background-image: url('../img/arrow.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0 3px 3px 0;
+  z-index: 998;
+  transition: all 720ms ease,color .2s linear;
+}
+.open-menu-drawer:active {
+  background-color: darkred;
+}
+
+.open-menu-drawer:hover {
+  background-color: darkred;
+}
+.menu-drawer {
+  position: fixed;
+  z-index: 99;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-100%);
+  transition: transform 720ms ease;
+  /*opacity: 0;*/
+  /*display: grid;*/
+  grid-template-areas: 'MENU OVERLAY';
+  grid-template-columns: 15fr 5fr;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 999;
+  
+}
+
+[data-menu]:checked ~ .menu-drawer {
+  transform: none;
+  opacity: 1;
+  backdrop-filter: blur(6px);
+}
+
+.menu-drawer > div:first-child {
+  transition: all 720ms ease;
+  width: 50vw;
+  margin-left: 25vw;
+  height: 96px;
+  background: transparent;
+}
+.menu {
+  width: 50vw;
+  height: calc(100vh - 96px);
+  margin-left: 25vw;
+  display: flex;
+  align-items: stretch;
+  flex-flow: column wrap;
+  transform: translateX(-30%);
+  opacity: 0;
+  color: #fff;
+  transition: all 720ms ease;
+  transition-delay: 0;
+  contain: content;
+  grid-area: 'MENU';
+  background-color: white;
+  box-sizing: border-box;
+  padding: 24px;
+  overflow: auto;
+  font-family: "Helvetica Neue",sans-serif;
+  -webkit-overflow-scrolling: touch;
+  font-weight: 200;
+    font-size: 22px;
+  overflow: auto;
+}
+.menu > div {
+  padding: 32px;
+}
+@media screen and (max-width: 1025px) {
+  .menu, .menu-drawer > div:first-child {
+    width: 100vw;
+    margin-left: 0;
+  }
+}
+
+[data-menu]:checked ~ .menu-drawer .menu {
+  transform: none;
+  opacity: 1;
+}
+[data-menu]:checked ~ .menu-drawer > div:first-child {
+  background: white;
+}
+
+.menu a {
+  text-decoration: none;
+  display: block;
+  padding: 16px 0;
+  color: #88898d;
+  line-height: 25px;
+  cursor: pointer;
+}
+
+.menu a:hover, .menu a.active {
+  color: #3a3a3a;
+}
+
+.menu > * + * {
+  border-top: 0px solid rgba(255, 0, 255, 0.1);
+}
+
+.menu-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  grid-area: 'OVERLAY';
+  z-index: 999;
+}
+.menu-overlay img {
+  margin: 24px;
+  padding: 8px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  /*opacity: 0;*/
+}
