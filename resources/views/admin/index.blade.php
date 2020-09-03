@@ -154,12 +154,19 @@
                 <div class="section_header"><span class="section_header_text">Most Visited Stations</span></div>
                 <div class="mdl-card__supporting-text mdl-color-text--grey-600 below-section-header">
                     <ul class="demo-list-control mdl-list mdl-color--white">
-                        @foreach($stations_by_duration as $item)
+                        @if ($stations_by_duration && count($stations_by_duration) > 0)
+                            @foreach($stations_by_duration as $item)
+                                <li class="mdl-list__item">
+                                    <span class="mdl-list__item-primary-content">{{$item->name}}</span>
+                                    <span class="mdl-list__item-secondary-action">{{floor($item->duration_in_sec / 60) . 'm ' . $item->duration_in_sec % 60 . 's'}}</span>
+                                </li>
+                            @endforeach
+                        @else
                             <li class="mdl-list__item">
-                                <span class="mdl-list__item-primary-content">{{$item->name}}</span>
-                                <span class="mdl-list__item-secondary-action">{{floor($item->duration_in_sec / 60) . 'm ' . $item->duration_in_sec % 60 . 's'}}</span>
+                                <span class="mdl-list__item-primary-content">Nothing to show</span>
+                                <span class="mdl-list__item-secondary-action">-</span>
                             </li>
-                        @endforeach
+                        @endif
                     </ul>
                 </div>
             </div>

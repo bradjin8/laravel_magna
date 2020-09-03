@@ -104,7 +104,11 @@ class HomeController extends Controller
 
 
         if ($type == 'pdf') {
-            $record = new TrackRecordModel(['category_id' => $category_id, 'type' => $type, 'duration_in_sec' => 1, 'file_name' => $file, 'visitor_id' => $visitor_id]);
+            $record = new TrackRecordModel(['category_id' => $category_id, 'type' => $type, 'duration_in_sec' => 0, 'file_name' => $file, 'visitor_id' => $visitor_id]);
+            $record->save();
+        }
+        else if ($type == 'page') {
+            $record = new TrackRecordModel(['category_id' => $category_id, 'type' => $type, 'duration_in_sec' => 0, 'file_name' => $file, 'visitor_id' => $visitor_id]);
             $record->save();
         }
 
