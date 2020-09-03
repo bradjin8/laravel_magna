@@ -25,19 +25,19 @@
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="192x192" href="images/favicon.ico">
+    <link rel="icon" sizes="192x192" href="{{url('/public/admin')}}/images/favicon.ico">
 
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Material Design Lite">
-    <link rel="apple-touch-icon-precomposed" href="images/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="{{url('/public/admin')}}/images/favicon.ico">
 
     <!-- Tile icon for Win8 (144x144 + tile color) -->
     <meta name="msapplication-TileImage" content="images/favicon.ico">
     <meta name="msapplication-TileColor" content="#3372DF">
 
-    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="shortcut icon" href="{{url('/public/admin')}}/images/favicon.ico">
 
     <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
     <!--
@@ -48,7 +48,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-light_blue.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{url('/public/admin')}}/styles.css">
   </head>
   <body>
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
@@ -91,7 +91,7 @@
         </header>
           <div class="user-avatar-drawer">
               <div class="user-avatar-img">
-                <img src="images/user.jpg" class="demo-avatar user-avatar">
+                <img src="{{url('/public/admin')}}/images/user.jpg" class="demo-avatar user-avatar">
               </div>
               <div class="user-details">
                 <span class="name">Erica Angma</span>
@@ -116,10 +116,10 @@
             <a class="mdl-navigation__link mdl-color-text--blue-grey-400" href="https://eeidigital.com/magna/ves/" target="_blank">
               <span class="mdl-color-text--blue-grey-400 material-icons" >dashboard</span>Visit VIS
             </a>
-            <a class="mdl-navigation__link mdl-color-text--blue-grey-400" href="./index.html">
+            <a class="mdl-navigation__link mdl-color-text--blue-grey-400" href="{{url('/administrator')}}">
                 <span class="mdl-color-text--blue-grey-400 material-icons">timeline</span>Metrics
             </a>
-          <a class="mdl-navigation__link mdl-color-text--blue-grey-400 active" href="./contacts.html">
+          <a class="mdl-navigation__link mdl-color-text--blue-grey-400 active" href="{{url('/administrator')}}/contacts">
               <span class="mdl-color-text--blue-grey-400 material-icons">contacts</span>Contacts
           </a>
           <a class="mdl-navigation__link mdl-color-text--blue-grey-400" href="">
