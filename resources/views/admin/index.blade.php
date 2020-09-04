@@ -133,10 +133,10 @@
                target="_blank">
                 <span class="mdl-color-text--blue-grey-400 material-icons">dashboard</span>Visit VIS
             </a>
-            <a class="mdl-navigation__link mdl-color-text--blue-grey-400 active" href="{{url('/admin')}}">
+            <a class="mdl-navigation__link mdl-color-text--blue-grey-400 active" href="{{url('/administrator')}}">
                 <span class="mdl-color-text--blue-grey-400 material-icons">timeline</span>Metrics
             </a>
-            <a class="mdl-navigation__link mdl-color-text--blue-grey-400" href="{{url('/admin/contacts')}}">
+            <a class="mdl-navigation__link mdl-color-text--blue-grey-400" href="{{url('/administrator/contacts')}}">
                 <span class="mdl-color-text--blue-grey-400 material-icons">contacts</span>Contacts
             </a>
             <a class="mdl-navigation__link mdl-color-text--blue-grey-400" href="">
