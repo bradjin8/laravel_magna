@@ -17,6 +17,14 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
+$route_slug = 'admin_';
+Route::group(array('prefix' => 'administrator'), function() use($route_slug)
+{
+    $module_controller = "Admin\DashboardController@";
+    Route::get('/', ['as' => $route_slug . 'index', 'uses' => $module_controller . 'index']);
+    Route::get('/contacts', ['as' => $route_slug . 'contact', 'uses' => $module_controller . 'contacts']);
+    Route::get('/export', ['as' => $route_slug . 'contact', 'uses' => $module_controller . 'export']);
+});
 
 $module_controller = "Front\HomeController@";
 Route::get('/', ['as' => 'home_index_get', 'uses' => $module_controller . 'index']);
@@ -30,8 +38,9 @@ Route::group(['middleware' => 'register'], function () {
 
 
     Route::get('/videos/mechatronics/{sub_category}/{title}', ['as' => 'videos_mechatronics', 'uses' => $module_controller . 'videosMechatronics']);
-    Route::get('/videos/{category}/{title}', ['as' => 'videos', 'uses' => $module_controller . 'videos']);
+    Route::get('/content/mechatronics/{sub_category}/{title}', ['as' => 'content_mechatronics', 'uses' => $module_controller . 'contentMechatronics']);
 
+    Route::get('/videos/{category}/{title}', ['as' => 'videos', 'uses' => $module_controller . 'videos']);
     Route::get('/pdfs/{category}/{title}', ['as' => 'pdfs', 'uses' => $module_controller . 'downloadPDF']);
     Route::get('/content/{category}/{title}', ['as' => 'content', 'uses' => $module_controller . 'content']);
 
@@ -39,11 +48,3 @@ Route::group(['middleware' => 'register'], function () {
 
 });
 
-$route_slug = 'admin_';
-Route::group(array('prefix' => 'administrator'), function() use($route_slug)
-{
-    $module_controller = "Admin\DashboardController@";
-    Route::get('/', ['as' => $route_slug . 'index', 'uses' => $module_controller . 'index']);
-    Route::get('/contacts', ['as' => $route_slug . 'contact', 'uses' => $module_controller . 'contacts']);
-    Route::get('/export', ['as' => $route_slug . 'contact', 'uses' => $module_controller . 'export']);
-});

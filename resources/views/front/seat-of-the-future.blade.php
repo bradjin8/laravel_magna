@@ -114,7 +114,7 @@
                     title: 'Free Yourself From Cramped Legs',
                     video: "{{url('/videos')}}/seat-of-the-future/Free_yourself_from_cramped_legs.mp4"
                 },
-                {title: 'FREEFORM Tech Sheet', techsheet: "{{url('/public/front/content')}}/seat-of-the-future/FREEFORM_Tech_Sheet.jpg"}
+                {title: 'FREEFORM Tech Sheet', techsheet: "{{url('/content')}}/seat-of-the-future/FREEFORM_Tech_Sheet.jpg"}
             ],
             'Reconfigurable Seating': [
                 {grouptitle: 'Reconfigurable Seating'},

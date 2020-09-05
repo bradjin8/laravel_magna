@@ -193,7 +193,8 @@
             </div>
             <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--4-col-desktop">
                 <div class="section_header"><span class="section_header_text">Most Downloaded</span>
-                    <a href="{{url('/administrator/export')}}" target="_blank" class="mdl-button mdl-js-button export-btn">Export</a>
+                    <a href="{{url('/administrator/export')}}" target="_blank"
+                       class="mdl-button mdl-js-button export-btn">Export</a>
                 </div>
                 <div class="mdl-card__supporting-text mdl-color-text--grey-600 below-section-header">
                     <ul class="demo-list-control mdl-list mdl-color--white">
@@ -232,9 +233,9 @@
                             <td class="mdl-data-table__cell--non-numeric">{{$item->category}}</td>
                             <td>{{$item->total_visit_count != null ? $item->total_visit_count : 0}}</td>
                             <td>{{$item->total_duration_in_sec ? floor($item->total_duration_in_sec / 60) . 'm ' . $item->total_duration_in_sec % 60 . 's' : '0m 0s'}}</td>
-{{--                            <td>{{strlen($item->most_viewed_content) > 15 ? substr($item->most_viewed_content, 0, 14) . '...': $item->most_viewed_content}}</td>--}}
+                            {{--                            <td>{{strlen($item->most_viewed_content) > 15 ? substr($item->most_viewed_content, 0, 14) . '...': $item->most_viewed_content}}</td>--}}
                             <td>{{$item->most_viewed_content}}</td>
-{{--                            <td>{{strlen($item->most_downloaded_pdf) > 15 ? substr($item->most_downloaded_pdf, 0, 14) . '...': $item->most_downloaded_pdf}}</td>--}}
+                            {{--                            <td>{{strlen($item->most_downloaded_pdf) > 15 ? substr($item->most_downloaded_pdf, 0, 14) . '...': $item->most_downloaded_pdf}}</td>--}}
                             <td>{{$item->most_downloaded_pdf}}</td>
                         </tr>
                     @endforeach
@@ -353,16 +354,20 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     function adjustText() {
-        $('span.mdl-list__item-primary-content').each(function () {
+        $('.mdl-list__item span.mdl-list__item-primary-content').each(function () {
             var text = $(this).text();
+            if ($(this).html().includes('material-icons')) {
+                return;
+            }
             var width = $(this).width();
-            console.log(text.length, width);
+            // console.log(text.length, width);
             if (width / text.length < 10) {
                 // console.log($(this).text(), $(this).width());
-                $(this).text(text.substr(0,parseInt(width / 10)) + '...');
+                $(this).text(text.substr(0, parseInt(width / 10)) + '...');
             }
         })
     }
+
     $(document).ready(function () {
         adjustText();
         $(window).resize(function () {

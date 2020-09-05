@@ -24,6 +24,7 @@ class HomeController extends Controller
     private $arr_view_data;
     private $module_title;
     private $home_url_path;
+    private $module_content_path;
 
     private $categoryModel;
     private $trackRecordModel;
@@ -37,7 +38,7 @@ class HomeController extends Controller
         $this->home_url_path = url('/');
         $this->module_pdf_path = '/front/pdfs/';
         $this->module_video_path = '/front/content/';
-
+        $this->module_content_path = '/front/content/';
 
         $this->categoryModel = $categoryModel;
         $this->trackRecordModel = $trackRecordModel;
@@ -119,10 +120,7 @@ class HomeController extends Controller
         $visitor_id = session('visitor_id', 0);
 
 
-        if ($type == 'pdf') {
-            $record = new TrackRecordModel(['category_id' => $category_id, 'type' => $type, 'duration_in_sec' => 0, 'file_name' => $file, 'visitor_id' => $visitor_id]);
-            $record->save();
-        } else if ($type == 'page') {
+        if ($type != 'page') {
             $record = new TrackRecordModel(['category_id' => $category_id, 'type' => $type, 'duration_in_sec' => 0, 'file_name' => $file, 'visitor_id' => $visitor_id]);
             $record->save();
         }
@@ -178,11 +176,34 @@ class HomeController extends Controller
                 ->json($data, 404);
         }
     }
+
     public function content($category, $file)
     {
         $obj_category = $this->categoryModel->where(['slug' => $category])->first();
 
-        $path = public_path($this->module_pdf_path . $category . '/' . $file);
+        $path = public_path($this->module_content_path . $category . '/' . $file);
+
+        if ($obj_category && file_exists($path)) {
+            $type = 'content';
+            $time = time();
+
+            $this->_update_session($obj_category->id, $type, $time, $file);
+
+            return response()->file($path);
+        } else {
+            $data['success'] = 'false';
+            $data['message'] = 'Can not find the content file.';
+            return response()
+                ->json($data, 404);
+        }
+    }
+
+    public function contentMechatronics($sub_category, $file)
+    {
+        $category = 'mechatronics';
+        $obj_category = $this->categoryModel->where(['slug' => $category])->first();
+
+        $path = public_path($this->module_content_path . $category . '/' . $sub_category . '/' . $file);
 
         if ($obj_category && file_exists($path)) {
             $type = 'content';
