@@ -166,14 +166,14 @@
     <nav class="menu">
         <div>
             <a href="{{url('/')}}" class="active">Welcome Area<br>& Explore Magna Careers</a>
-            <a href="{{url('/category')}}/active-aerodynamics">Active Aerodynamics</a>
-            <a href="{{url('/category')}}/advanced-driver">Advanced Driver Assistance Systems</a>
-            <a href="{{url('/category')}}/body-exteriors">Body Exteriors & Structures</a>
-            <a href="{{url('/category')}}/complete-vehicles">Complete Vehicles</a>
-            <a href="{{url('/category')}}/intelligent-lighting">Intelligent Lighting</a>
-            <a href="{{url('/category')}}/mechatronics">Mechatronics</a>
-            <a href="{{url('/category')}}/scalable-electrification">Scalable Electrification</a>
-            <a href="{{url('/category')}}/seat-of-the-future">Seat of the Future</a>
+            <a href="{{url('/')}}/active-aerodynamics">Active Aerodynamics</a>
+            <a href="{{url('/')}}/advanced-driver">Advanced Driver Assistance Systems</a>
+            <a href="{{url('/')}}/body-exteriors">Body Exteriors & Structures</a>
+            <a href="{{url('/')}}/complete-vehicles">Complete Vehicles</a>
+            <a href="{{url('/')}}/intelligent-lighting">Intelligent Lighting</a>
+            <a href="{{url('/')}}/mechatronics">Mechatronics</a>
+            <a href="{{url('/')}}/scalable-electrification">Scalable Electrification</a>
+            <a href="{{url('/')}}/seat-of-the-future">Seat of the Future</a>
         </div>
     </nav>
     <label for="menu-opener" class="menu-overlay">

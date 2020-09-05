@@ -101,37 +101,37 @@
             {
                 menutitle: 'Active Aerodynamics',
                 title: 'Visible Active Grille Shutter',
-                techsheet: "{{url('/public/front/content')}}/active-aerodynamics/1_Visible_Active_Grille_Shutter.jpg",
+                techsheet: "{{url('/content')}}/active-aerodynamics/1_Visible_Active_Grille_Shutter.jpg",
                 video: "{{url('/videos')}}/active-aerodynamics/1_Sedan_Visible_Active_Grille_Shutter.mp4"
             },
             {
                 title: 'Active Grille Shutter',
-                techsheet: "{{url('/public/front/content')}}/active-aerodynamics/2_Active_Grille_Shutter.jpg",
+                techsheet: "{{url('/content')}}/active-aerodynamics/2_Active_Grille_Shutter.jpg",
                 video: "{{url('/videos')}}/active-aerodynamics/2_SUV_Active_Grille_Shutter.mp4"
             },
             {
                 title: 'Active Air Deflector',
-                techsheet: "{{url('/public/front/content')}}/active-aerodynamics/3_Active_Air_Deflector.jpg",
+                techsheet: "{{url('/content')}}/active-aerodynamics/3_Active_Air_Deflector.jpg",
                 video: "{{url('/videos')}}/active-aerodynamics/3_Pickup_Active_Air_Deflector.mp4"
             },
             {
                 title: 'Active Underbody Panel',
-                techsheet: "{{url('/public/front/content')}}/active-aerodynamics/4_Active_Underbody_Panel.jpg",
+                techsheet: "{{url('/content')}}/active-aerodynamics/4_Active_Underbody_Panel.jpg",
                 video: "{{url('/videos')}}/active-aerodynamics/4_Sedan_Active_Underbody_Panel.mp4"
             },
             {
                 title: 'Active Front Wheel Deflector',
-                techsheet: "{{url('/public/front/content')}}/active-aerodynamics/5_Active_Front_Wheel_Deflectors.jpg",
+                techsheet: "{{url('/content')}}/active-aerodynamics/5_Active_Front_Wheel_Deflectors.jpg",
                 video: "{{url('/videos')}}/active-aerodynamics/5_SUV_Front_Wheel_Deflector.mp4"
             },
             {
                 title: 'Active Rear Diffuser',
-                techsheet: "{{url('/public/front/content')}}/active-aerodynamics/6_Active_Rear_Diffuser.jpg",
+                techsheet: "{{url('/content')}}/active-aerodynamics/6_Active_Rear_Diffuser.jpg",
                 video: "{{url('/videos')}}/active-aerodynamics/6_SUV_Active_Rear_Diffuser.mp4"
             },
             {
                 title: 'Active Spoiler',
-                techsheet: "{{url('/public/front/content')}}/active-aerodynamics/7_Active_Spoiler.jpg",
+                techsheet: "{{url('/content')}}/active-aerodynamics/7_Active_Spoiler.jpg",
                 video: "{{url('/videos')}}/active-aerodynamics/7_SUV_Active_Spoiler.mp4"
             }
         ],

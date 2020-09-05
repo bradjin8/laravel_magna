@@ -55,7 +55,7 @@
       <header class="demo-header mdl-layout__header mdl-color--white mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
             <div class="top_nav_header_section">
-                <span class="mdl-layout-title">MAGNA VIRTUAL INNOVATION SHOWROOM</span>
+                <span class="mdl-layout-title">Magna Virtual Showroom</span>
                 <ul class="demo-list-icon mdl-list active-visitor-highlight">
                   <li class="mdl-list__item">
                     <span class="mdl-list__item-primary-content">

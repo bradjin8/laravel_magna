@@ -69,16 +69,17 @@ class HomeController extends Controller
         $country = $request->input('country', null);
         $how = $request->input('how', null);
 
-        if ($relationship != null && $country != null && $how != null) {
+//        return $relationship . '/' . $country . '/' . $how;
+        if ($relationship != null && $country != null) {
             $visitor = new VisitorModel(['relationship' => $relationship, 'country' => $country, 'how' => $how]);
             $visitor->save();
 
             session(['relationship' => $relationship, 'country' => $country, 'how' => $how, 'visitor_id' => $visitor->id]);
 
 //            return $relationship . '/' . $country . '/' . $how;
-            return redirect('/pano');
+            return redirect(url('/pano'));
         } else {
-            return redirect('/');
+            return redirect(url('/'));
         }
     }
 
@@ -173,6 +174,26 @@ class HomeController extends Controller
         } else {
             $data['success'] = 'false';
             $data['message'] = 'Can not find the pdf file.';
+            return response()
+                ->json($data, 404);
+        }
+    }
+    public function content($category, $file)
+    {
+        $obj_category = $this->categoryModel->where(['slug' => $category])->first();
+
+        $path = public_path($this->module_pdf_path . $category . '/' . $file);
+
+        if ($obj_category && file_exists($path)) {
+            $type = 'content';
+            $time = time();
+
+            $this->_update_session($obj_category->id, $type, $time, $file);
+
+            return response()->file($path);
+        } else {
+            $data['success'] = 'false';
+            $data['message'] = 'Can not find the content file.';
             return response()
                 ->json($data, 404);
         }

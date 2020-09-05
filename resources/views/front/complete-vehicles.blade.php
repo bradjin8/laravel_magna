@@ -32,9 +32,9 @@
                     <video
                             width="350"
                             plays-inline controls
-                            poster="{{url('/public/front/content')}}/active-aerodynamics/media-splash.jpg">
+                            poster="{{url('/content')}}/active-aerodynamics/media-splash.jpg">
                     </video>
-                    <img src="{{url('/public/front/content')}}/active-aerodynamics/media-splash.jpg">
+                    <img src="{{url('/content')}}/active-aerodynamics/media-splash.jpg">
                 </div>
                 <h3 class="dark">Video Subtitle</h3>
                 <p class="light">Video description</p>
@@ -121,7 +121,7 @@
             title_b: 'Registration Form',
             functions_b: ["Engineering", "Purchasing", "Product Development", "Marketing", "Other"],
             techs_b: ["Complete Vehicle Engineering", "Complete Vehicle Manufacturing", "Virtual Development", "Smart Factory"],
-            bg_img_b: './img/backgrounds/Complete-Vehicles-pdf-bg-min.jpg'
+            bg_img_b: "{{url('/public/front')}}/img/backgrounds/Complete-Vehicles-pdf-bg-min.jpg"
         }
         $(".infoButton").click(() => {
             showPdfPopup(dataA)

@@ -142,7 +142,7 @@
             <img src="{{url('/public/front')}}/img/registration_form.png">
         </div>
         <div class="right">
-            <form action="/" method="post" id="register">
+            <form action="{{url('/')}}/" method="post" id="register">
                 {{ csrf_field() }}
                 <h2>Please complete the form below before entering the Magna Virtual Showroom</h2>
                 <p>What is your relationship with Magna?</p>
@@ -411,10 +411,10 @@
                 <p>How did you hear about the site?</p>
                 <select id="how-hear" name="how">
                     <option disabled selected>Select an Option</option>
-                    <option>I follow Magna on social media</option>
-                    <option>A friend shared it with me</option>
-                    <option>Magna.com</option>
-                    <option>Internal Magna communication</option>
+                    <option value="I follow Magna on social media">I follow Magna on social media</option>
+                    <option value="A friend shared it with me">A friend shared it with me</option>
+                    <option value="Magna.com">Magna.com</option>
+                    <option value="Internal Magna communication">Internal Magna communication</option>
                 </select>
                 <div>
                     <label class="check">Use Of And/Or Registration On Any Portion Of This Site Constitutes Acceptance

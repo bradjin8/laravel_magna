@@ -27,14 +27,15 @@ Route::get('/test', ['as' => 'home_test', 'uses' => $module_controller . 'test']
 Route::group(['middleware' => 'register'], function () {
     $module_controller = "Front\HomeController@";
     Route::get('/pano', ['as' => 'home_pano', 'uses' => $module_controller . 'pano']);
-    Route::get('/category/{category}', ['as' => 'category', 'uses' => $module_controller . 'category']);
 
 
     Route::get('/videos/mechatronics/{sub_category}/{title}', ['as' => 'videos_mechatronics', 'uses' => $module_controller . 'videosMechatronics']);
     Route::get('/videos/{category}/{title}', ['as' => 'videos', 'uses' => $module_controller . 'videos']);
 
     Route::get('/pdfs/{category}/{title}', ['as' => 'pdfs', 'uses' => $module_controller . 'downloadPDF']);
+    Route::get('/content/{category}/{title}', ['as' => 'content', 'uses' => $module_controller . 'content']);
 
+    Route::get('/{category}', ['as' => 'category', 'uses' => $module_controller . 'category']);
 
 });
 

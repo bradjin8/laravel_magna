@@ -56,7 +56,7 @@
     <header class="demo-header mdl-layout__header mdl-color--white mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
             <div class="top_nav_header_section">
-                <span class="mdl-layout-title">MAGNA VIRTUAL INNOVATION SHOWROOM</span>
+                <span class="mdl-layout-title">Magna Virtual Showroom</span>
                 <ul class="demo-list-icon mdl-list active-visitor-highlight">
                     <li class="mdl-list__item">
                     <span class="mdl-list__item-primary-content">
@@ -177,6 +177,7 @@
                         @if ($videos_by_duration && count($videos_by_duration) > 0)
                             @foreach($videos_by_duration as $item)
                                 <li class="mdl-list__item">
+                                    {{--<span class="mdl-list__item-primary-content">{{strlen($item->file_name) > 15 ? substr($item->file_name, 0, 14) . '...': $item->file_name}}</span>--}}
                                     <span class="mdl-list__item-primary-content">{{$item->file_name}}</span>
                                     <span class="mdl-list__item-secondary-action">{{floor($item->duration_in_sec / 60) . 'm ' . $item->duration_in_sec % 60 . 's'}}</span>
                                 </li>
@@ -199,6 +200,7 @@
                         @if ($pdfs_by_count && count($pdfs_by_count) > 0)
                             @foreach($pdfs_by_count as $item)
                                 <li class="mdl-list__item">
+                                    {{--<span class="mdl-list__item-primary-content">{{strlen($item->file_name) > 15 ? substr($item->file_name, 0, 14) . '...': $item->file_name}}</span>--}}
                                     <span class="mdl-list__item-primary-content">{{$item->file_name}}</span>
                                     <span class="mdl-list__item-secondary-action">{{$item->download_count}}</span>
                                 </li>
@@ -219,9 +221,9 @@
                     <tr>
                         <th class="mdl-data-table__cell--non-numeric">Name</th>
                         <th>Times Visited</th>
+                        <th>Time Spent</th>
                         <th>Most Viewed Content</th>
                         <th>Most Downloaded</th>
-                        <th>Time Spent</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -229,9 +231,11 @@
                         <tr>
                             <td class="mdl-data-table__cell--non-numeric">{{$item->category}}</td>
                             <td>{{$item->total_visit_count != null ? $item->total_visit_count : 0}}</td>
-                            <td>{{$item->most_duration_in_sec != null ? floor($item->most_duration_in_sec / 60) . 'm ' . $item->most_duration_in_sec % 60 . 's': '0m 0s'}}</td>
-                            <td>{{$item->most_download_count ? $item->most_download_count : 0}}</td>
                             <td>{{$item->total_duration_in_sec ? floor($item->total_duration_in_sec / 60) . 'm ' . $item->total_duration_in_sec % 60 . 's' : '0m 0s'}}</td>
+{{--                            <td>{{strlen($item->most_viewed_content) > 15 ? substr($item->most_viewed_content, 0, 14) . '...': $item->most_viewed_content}}</td>--}}
+                            <td>{{$item->most_viewed_content}}</td>
+{{--                            <td>{{strlen($item->most_downloaded_pdf) > 15 ? substr($item->most_downloaded_pdf, 0, 14) . '...': $item->most_downloaded_pdf}}</td>--}}
+                            <td>{{$item->most_downloaded_pdf}}</td>
                         </tr>
                     @endforeach
                     </tbody>
@@ -346,5 +350,24 @@
     </footer>
 </div>
 <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    function adjustText() {
+        $('span.mdl-list__item-primary-content').each(function () {
+            var text = $(this).text();
+            var width = $(this).width();
+            console.log(text.length, width);
+            if (width / text.length < 10) {
+                // console.log($(this).text(), $(this).width());
+                $(this).text(text.substr(0,parseInt(width / 10)) + '...');
+            }
+        })
+    }
+    $(document).ready(function () {
+        adjustText();
+        $(window).resize(function () {
+        })
+    })
+</script>
 </body>
 </html>

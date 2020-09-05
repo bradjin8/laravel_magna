@@ -32,9 +32,9 @@
                     <video
                             width="350"
                             plays-inline controls
-                            poster="{{url('/public/front/content')}}/active-aerodynamics/media-splash.jpg">
+                            poster="{{url('/content')}}/active-aerodynamics/media-splash.jpg">
                     </video>
-                    <img src="{{url('/public/front/content')}}/active-aerodynamics/media-splash.jpg">
+                    <img src="{{url('/content')}}/active-aerodynamics/media-splash.jpg">
                 </div>
                 <h3 class="dark">Video Subtitle</h3>
                 <p class="light">Video description</p>

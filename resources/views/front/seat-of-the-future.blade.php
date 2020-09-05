@@ -150,9 +150,9 @@
                 },
 
                 {grouptitle: 'See in Action'},
-                {title: 'Tech Sheet: IP Nesting', techsheet: "{{url('/public/front/content')}}/seat-of-the-future/IP_Nesting.jpg"},
-                {title: 'Tech Sheet: Long Rails', techsheet: "{{url('/public/front/content')}}/seat-of-the-future/Long_Rails.jpg"},
-                {title: 'Tech Sheet: Stadium Swivel', techsheet: "{{url('/public/front/content')}}/seat-of-the-future/Stadium_Swivel_Seat.jpg"}
+                {title: 'Tech Sheet: IP Nesting', techsheet: "{{url('/content')}}/seat-of-the-future/IP_Nesting.jpg"},
+                {title: 'Tech Sheet: Long Rails', techsheet: "{{url('/content')}}/seat-of-the-future/Long_Rails.jpg"},
+                {title: 'Tech Sheet: Stadium Swivel', techsheet: "{{url('/content')}}/seat-of-the-future/Stadium_Swivel_Seat.jpg"}
             ],
             'Seat of the Future': [
                 {

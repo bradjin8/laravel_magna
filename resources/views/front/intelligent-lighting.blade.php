@@ -98,13 +98,13 @@
                 {
                     menutitle: 'Forward Lighting',
                     title: 'Forward Spotlight',
-                    image: "{{url('/public/front/content')}}/intelligent-lighting/Forward_Spotlight.jpg",
+                    image: "{{url('/content')}}/intelligent-lighting/Forward_Spotlight.jpg",
                     subtitle: 'Forward Spotlight',
                     description: 'An auxiliary LED light module integrated into the front of a mirror housing that provides light forward and sideways from the vehicle​.'
                 },
                 {
                     title: 'Invision™ Adaptive Driving Beam',
-                    image: "{{url('/public/front/content')}}/intelligent-lighting/Invision.jpg",
+                    image: "{{url('/content')}}/intelligent-lighting/Invision.jpg",
                     video: "{{url('/videos')}}/intelligent-lighting/Invision.mp4",
                     subtitle: 'Invision™ Adaptive Driving Beam',
                     description: ' INVISION™ adaptive driving beam removes glare from oncoming drivers while supplying additional illumination.'
@@ -114,7 +114,7 @@
                 {
                     menutitle: 'Decorative Lighting',
                     title: 'Comprehensive Decorative Portfolio',
-                    image: "{{url('/public/front/content')}}/intelligent-lighting/Lit_Trim.jpg",
+                    image: "{{url('/content')}}/intelligent-lighting/Lit_Trim.jpg",
                     subtitle: 'Comprehensive Decorative Portfolio',
                     description: 'Comprehensive portfolio of illuminated exterior trim and lighting technologies enabling OEM brand differentiation.'
                 },
@@ -132,7 +132,7 @@
                 },
                 {
                     title: 'Projection Logo / Ground Illumination',
-                    image: "{{url('/public/front/content')}}/intelligent-lighting/Projection_Logo_Ground_Illumination.jpg",
+                    image: "{{url('/content')}}/intelligent-lighting/Projection_Logo_Ground_Illumination.jpg",
                     video: "{{url('/videos')}}/intelligent-lighting/Projection_Logo_Ground_Illumination.mp4",
                     subtitle: 'Projection Logo / Ground Illumination',
                     description: 'LED projection lighting and ground illumination solutions allowing for improved design, increased safety and OEM brand differentiation.'
@@ -148,13 +148,13 @@
                 },
                 {
                     title: 'Lit Pillar Applique',
-                    image: "{{url('/public/front/content')}}/intelligent-lighting/Lit_Pillar_Applique.jpg",
+                    image: "{{url('/content')}}/intelligent-lighting/Lit_Pillar_Applique.jpg",
                     subtitle: 'Lit Pillar Applique',
                     description: 'Integration of light into B-pillar applique to provide functionality and HMI user interface such as: charge indicator, vehicle access and additional vehicle status communication'
                 },
                 {
                     title: 'Mirror Turn Signal',
-                    image: "{{url('/public/front/content')}}/intelligent-lighting/Turn_Signal_Clearance.jpg",
+                    image: "{{url('/content')}}/intelligent-lighting/Turn_Signal_Clearance.jpg",
                     subtitle: 'Mirror Turn Signal',
                     description: 'Outside mirrors featuring integrated turn signals provide increased safety.'
                 }
@@ -169,7 +169,7 @@
                 },
                 {
                     title: 'ISELED',
-                    image: "{{url('/public/front/content')}}/intelligent-lighting/ISELED.jpg",
+                    image: "{{url('/content')}}/intelligent-lighting/ISELED.jpg",
                     subtitle: 'ISELED',
                     description: 'Using RGB LEDs ISELED offers dynamic cabin ambience lighting.'
                 }
@@ -178,37 +178,37 @@
                 {
                     menutitle: 'Rear Lighting',
                     title: 'Evenly Lit Function',
-                    image: "{{url('/public/front/content')}}/intelligent-lighting/Evenly_Lit_Function.jpg",
+                    image: "{{url('/content')}}/intelligent-lighting/Evenly_Lit_Function.jpg",
                     subtitle: 'Evenly Lit Function',
                     description: 'Homogenous styling appearance that meets OEM requirements.'
                 },
                 {
                     title: 'FLECSFORM™',
-                    image: "{{url('/public/front/content')}}/intelligent-lighting/flecsform.jpg",
+                    image: "{{url('/content')}}/intelligent-lighting/flecsform.jpg",
                     subtitle: 'FLECSFORM™',
                     description: 'FLECSFORM™ utilizes micro LEDs on a flexible circuit to enable thinner, more efficient lighting solutions that enhance styling.'
                 },
                 {
                     title: 'Integrated CHMSL Lighting',
-                    image: "{{url('/public/front/content')}}/intelligent-lighting/Integrated_CHMSL_Lighting.jpg",
+                    image: "{{url('/content')}}/intelligent-lighting/Integrated_CHMSL_Lighting.jpg",
                     subtitle: 'Integrated CHMSL Lighting',
                     description: 'Addition of exterior and/or interior lighting to rear truck windows.'
                 },
                 {
                     title: 'OLED',
-                    image: "{{url('/public/front/content')}}/intelligent-lighting/OLED.jpg",
+                    image: "{{url('/content')}}/intelligent-lighting/OLED.jpg",
                     subtitle: 'OLED',
                     description: 'OLED panels provide flexible homogenous lighting allowing for new styling opportunities.'
                 },
                 {
                     title: 'Mirror Reverse Light',
-                    image: "{{url('/public/front/content')}}/intelligent-lighting/Reverse_Light.jpg",
+                    image: "{{url('/content')}}/intelligent-lighting/Reverse_Light.jpg",
                     subtitle: 'Reverse Light',
                     description: 'Outside Mirror with supplemental reverse lighting. Meets consumer demand for better exterior lighting.​'
                 },
                 {
                     title: 'Surface Element Lighting',
-                    image: "{{url('/public/front/content')}}/intelligent-lighting/Surface_Element_Lighting.jpg",
+                    image: "{{url('/content')}}/intelligent-lighting/Surface_Element_Lighting.jpg",
                     subtitle: 'Surface Element',
                     description: 'Lighting panels based on LED technology provide high intensity homogenous light at lower cost and higher reliability than OLED.'
                 }

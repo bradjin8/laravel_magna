@@ -127,22 +127,22 @@
             {
                 menutitle: 'Smart Access',
                 title: 'Overview',
-                image: "{{url('/public/front')}}/content/mechatronics/smart-access/smart-access-overview-min.jpg"
+                image: "{{url('/content')}}/mechatronics/smart-access/smart-access-overview-min.jpg"
             },
-            {title: 'Power Strut', techsheet: "{{url('/public/front')}}/content/mechatronics/smart-access/Power_Strut.jpg"},
-            {title: 'Power Liftgate ECU', techsheet: "{{url('/public/front')}}/content/mechatronics/smart-access/Power_Liftgate_ECU.jpg"},
-            {title: 'Anti Pinch Sensor', techsheet: "{{url('/public/front')}}/content/mechatronics/smart-access/Anti_Pinch_Strip.jpg"},
-            {title: 'Hinge', techsheet: "{{url('/public/front')}}/content/mechatronics/smart-access/Liftgate_Hinge.jpg"},
+            {title: 'Power Strut', techsheet: "{{url('/content')}}/mechatronics/smart-access/Power_Strut.jpg"},
+            {title: 'Power Liftgate ECU', techsheet: "{{url('/content')}}/mechatronics/smart-access/Power_Liftgate_ECU.jpg"},
+            {title: 'Anti Pinch Sensor', techsheet: "{{url('/content')}}/mechatronics/smart-access/Anti_Pinch_Strip.jpg"},
+            {title: 'Hinge', techsheet: "{{url('/content')}}/mechatronics/smart-access/Liftgate_Hinge.jpg"},
             {
                 title: 'Short Range Radar',
-                techsheet: "{{url('/public/front')}}/content/mechatronics/smart-access/Short_Range_Radar.jpg",
+                techsheet: "{{url('/content')}}/mechatronics/smart-access/Short_Range_Radar.jpg",
                 video: "{{url('/videos')}}/mechatronics/smart-access/Short_Range_Radar.mp4"
             },
-            {title: 'Handle', techsheet: "{{url('/public/front')}}/content/mechatronics/smart-access/Liftgate_Handle.jpg"},
-            {title: 'Integrated Cinch Latch', techsheet: "{{url('/public/front')}}/content/mechatronics/smart-access/G3_Liftgate_Latch.jpg"},
+            {title: 'Handle', techsheet: "{{url('/content')}}/mechatronics/smart-access/Liftgate_Handle.jpg"},
+            {title: 'Integrated Cinch Latch', techsheet: "{{url('/content')}}/mechatronics/smart-access/G3_Liftgate_Latch.jpg"},
             {
                 title: 'Radar Access Sensor',
-                techsheet: "{{url('/public/front')}}/content/mechatronics/smart-access/Radar_Access_Sensor.jpg",
+                techsheet: "{{url('/content')}}/mechatronics/smart-access/Radar_Access_Sensor.jpg",
                 video: "{{url('/videos')}}/mechatronics/smart-access/Radar_Access_Sensor.mp4"
             }
         ]

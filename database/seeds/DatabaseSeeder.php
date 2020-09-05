@@ -61,10 +61,11 @@ INSERT INTO `$schemaName`.`categories` (`id`, `name`, `slug`, `status`, `created
 (2, 'Advanced Driver', 'advanced-driver', 1, '2020-09-01 19:16:22', '2020-09-01 19:16:22'),
 (3, 'Body Exteriors', 'body-exteriors', 1, '2020-09-01 19:17:24', '2020-09-01 19:17:24'),
 (4, 'Complete Vehicles', 'complete-vehicles', 1, '2020-09-01 19:17:24', '2020-09-01 19:17:24'),
-(5, 'Mechatronics', 'mechatronics', 1, '2020-09-01 19:18:13', '2020-09-01 19:18:13'),
-(6, 'Scalable Electrification', 'scalable-electrification', 1, '2020-09-01 19:18:13', '2020-09-01 19:18:13'),
-(7, 'Seat of the Future', 'seat-of-the-future', 1, '2020-09-01 19:18:40', '2020-09-01 19:18:40'),
-(8, 'Intelligent Lighting', 'intelligent-lighting', 1, '2020-09-01 19:21:14', '2020-09-01 19:21:14');
+(5, 'Intelligent Lighting', 'intelligent-lighting', 1, '2020-09-01 19:21:14', '2020-09-01 19:21:14'),
+(6, 'Mechatronics', 'mechatronics', 1, '2020-09-01 19:18:13', '2020-09-01 19:18:13'),
+(7, 'Scalable Electrification', 'scalable-electrification', 1, '2020-09-01 19:18:13', '2020-09-01 19:18:13'),
+(8, 'Seat of the Future', 'seat-of-the-future', 1, '2020-09-01 19:18:40', '2020-09-01 19:18:40'),
+(9, 'Welcome Desk', 'welcome-desk', 1, '2020-09-01 19:21:14', '2020-09-01 19:21:14');
 ";
 
         \Illuminate\Support\Facades\DB::unprepared($query);

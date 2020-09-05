@@ -19,7 +19,7 @@ class CheckRegister
         AppInitializer::initDatabase();
 
         if (session('relationship') == null) {
-            return redirect('/');
+            return redirect(url('/'));
         }
 
         return $next($request);
