@@ -371,6 +371,7 @@
     $(document).ready(function () {
         adjustText();
         $(window).resize(function () {
+            adjustText();
         })
     })
 </script>

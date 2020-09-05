@@ -122,19 +122,19 @@ class DashboardController extends Controller
 
         $csv_s_s .= "Most Visited Stations, , , Most Viewed Content, , , Most Downloaded, , \n";
         for ($i = 0; $i < 5; $i++) {
-            if (count($stations_by_duration) > 0 && $stations_by_duration[$i]) {
+            if (count($stations_by_duration) > $i && $stations_by_duration[$i]) {
                 $csv_s_s .= $stations_by_duration[$i]->name . "," . $this->__secToMinS($stations_by_duration[$i]->duration_in_sec) . ", , ";
             } else {
                 $csv_s_s .= ", , , ";
             }
 
-            if (count($videos_by_duration) > 0 && $videos_by_duration[$i]) {
+            if (count($videos_by_duration) > $i && $videos_by_duration[$i]) {
                 $csv_s_s .= $videos_by_duration[$i]->file_name . "," . $this->__secToMinS($videos_by_duration[$i]->duration_in_sec) . ", , ";
             } else {
                 $csv_s_s .= ", , , ";
             }
 
-            if (count($pdfs_by_count) > 0 && $pdfs_by_count[$i]) {
+            if (count($pdfs_by_count) > $i && $pdfs_by_count[$i]) {
                 $csv_s_s .= $pdfs_by_count[$i]->file_name . "," . $pdfs_by_count[$i]->download_count . ", , \n";
             } else {
                 $csv_s_s .= ", , , \n";
