@@ -70,24 +70,21 @@ class HomeController extends Controller
         $country = $request->input('country', null);
         $how = $request->input('how', null);
 
-//        return $relationship . '/' . $country . '/' . $how;
         if ($relationship != null && $country != null) {
             $visitor = new VisitorModel(['relationship' => $relationship, 'country' => $country, 'how' => $how]);
             $visitor->save();
 
             session(['relationship' => $relationship, 'country' => $country, 'how' => $how, 'visitor_id' => $visitor->id]);
 
-//            return $relationship . '/' . $country . '/' . $how;
-            return redirect(url('/pano'));
+            return redirect(url('/showroom'));
         } else {
             return redirect(url('/'));
         }
     }
 
-    public function pano()
+    public function showroom()
     {
-//        return $testSession . '/' . $lastTime . '/' . $diffTime;
-        return view($this->module_view_folder . '.pano');
+        return view($this->module_view_folder . '.showroom');
     }
 
     public function category($category)
@@ -107,7 +104,7 @@ class HomeController extends Controller
             $this->arr_view_data['category'] = $arr_category['slug'];
             return view($this->module_view_folder . '.' . $category, $this->arr_view_data);
         } else {
-            return redirect('/pano');
+            return redirect('/showroom');
         }
     }
 
@@ -120,10 +117,8 @@ class HomeController extends Controller
         $visitor_id = session('visitor_id', 0);
 
 
-        if ($type != 'page') {
-            $record = new TrackRecordModel(['category_id' => $category_id, 'type' => $type, 'duration_in_sec' => 0, 'file_name' => $file, 'visitor_id' => $visitor_id]);
-            $record->save();
-        }
+        $record = new TrackRecordModel(['category_id' => $category_id, 'type' => $type, 'duration_in_sec' => 0, 'file_name' => $file, 'visitor_id' => $visitor_id]);
+        $record->save();
 
         // for calculating time spent for page and videos
         if ($prev_time != null) {

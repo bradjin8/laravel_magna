@@ -16,5 +16,5 @@
 </head>
 <body>
 
-<a href="{{url('/')}}/pano"><img class="main-logo" src="{{url('/public/front')}}/img/magna-logo.png"></a>
-<a href="{{url('/')}}/pano?scene-id=2"><img class="icon-360"></a>
+<a href="{{url('/')}}/showroom"><img class="main-logo" src="{{url('/public/front')}}/img/magna-logo.png"></a>
+<a href="{{url('/')}}/showroom?scene-id=2"><img class="icon-360"></a>

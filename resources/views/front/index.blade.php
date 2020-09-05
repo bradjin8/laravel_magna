@@ -458,7 +458,7 @@
                     jQuery('#intro-video-second').fadeTo(360, 1)
                     document.querySelector('#intro-video-second').play()
                     document.querySelector('#intro-video-second').addEventListener('ended', () => {
-                        // window.location = "{{url('/')}}/pano";
+                        // window.location = "{{url('/')}}/showroom";
                         jQuery('#register').submit();
                     }, false)
                 })

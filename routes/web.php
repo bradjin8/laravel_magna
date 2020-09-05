@@ -34,7 +34,7 @@ Route::get('/test', ['as' => 'home_test', 'uses' => $module_controller . 'test']
 
 Route::group(['middleware' => 'register'], function () {
     $module_controller = "Front\HomeController@";
-    Route::get('/pano', ['as' => 'home_pano', 'uses' => $module_controller . 'pano']);
+    Route::get('/showroom', ['as' => 'home_pano', 'uses' => $module_controller . 'showroom']);
 
 
     Route::get('/videos/mechatronics/{sub_category}/{title}', ['as' => 'videos_mechatronics', 'uses' => $module_controller . 'videosMechatronics']);

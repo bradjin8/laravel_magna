@@ -72,7 +72,7 @@
 
     // Create scenes.
     var scenes = data.scenes.map(function(data) {
-        var urlPrefix = "/public/front/tiles";
+        var urlPrefix = "./public/front/tiles";
         var source = Marzipano.ImageUrlSource.fromString(
             urlPrefix + "/" + data.id + "/{z}/{f}/{y}/{x}.jpg",
             { cubeMapPreviewUrl: urlPrefix + "/" + data.id + "/preview.jpg" });
@@ -331,7 +331,7 @@
 
         // Create image element.
         var icon = document.createElement('img');
-        icon.src = '/public/front/img/link.png';
+        icon.src = './public/front/img/link.png';
         icon.classList.add('link-hotspot-icon');
 
         // Set rotation transform.
@@ -377,7 +377,7 @@
         var iconWrapper = document.createElement('div');
         iconWrapper.classList.add('info-hotspot-icon-wrapper');
         var icon = document.createElement('img');
-        icon.src = '/public/front/img/info.png';
+        icon.src = './public/front/img/info.png';
         icon.classList.add('info-hotspot-icon');
         iconWrapper.appendChild(icon);
 
@@ -393,7 +393,7 @@
         var closeWrapper = document.createElement('div');
         closeWrapper.classList.add('info-hotspot-close-wrapper');
         var closeIcon = document.createElement('img');
-        closeIcon.src = '/public/front/img/close.png';
+        closeIcon.src = './public/front/img/close.png';
         closeIcon.classList.add('info-hotspot-close-icon');
         closeWrapper.appendChild(closeIcon);
 
@@ -420,14 +420,14 @@
         let dataA = {
             title: 'Welcome to the Magna Virtual Showroom',
             items: [
-                ['/public/front/img/pano-info/info.png', 'Select the info icon to reveal and receive further information'],
-                ['/public/front/img/pano-info/move.png', 'Click and drag your mouse to change your point of view'],
-                ['/public/front/img/pano-info/hotspot.png', 'Select red hotspots to reveal more content'],
-                ['/public/front/img/pano-info/link.png', 'Select green hotspots to move to a different 360˚ location'],
-                ['/public/front/img/pano-info/2d-link.png', 'Select blue hotspots to enter product areas'],
-                ['/public/front/img/pano-info/red-play-icon.png', 'Select the red play button to reveal more content'],
-                ['/public/front/img/pano-info/360.png', 'Select the 360˚ icon to return to the panoramic view'],
-                ['/public/front/img/pano-info/uni-nav.png', 'Select the arrow to your left to open the main navigational page']
+                ['./public/front/img/pano-info/info.png', 'Select the info icon to reveal and receive further information'],
+                ['./public/front/img/pano-info/move.png', 'Click and drag your mouse to change your point of view'],
+                ['./public/front/img/pano-info/hotspot.png', 'Select red hotspots to reveal more content'],
+                ['./public/front/img/pano-info/link.png', 'Select green hotspots to move to a different 360˚ location'],
+                ['./public/front/img/pano-info/2d-link.png', 'Select blue hotspots to enter product areas'],
+                ['./public/front/img/pano-info/red-play-icon.png', 'Select the red play button to reveal more content'],
+                ['./public/front/img/pano-info/360.png', 'Select the 360˚ icon to return to the panoramic view'],
+                ['./public/front/img/pano-info/uni-nav.png', 'Select the arrow to your left to open the main navigational page']
             ]
         }
         // Show content when hotspot is clicked.

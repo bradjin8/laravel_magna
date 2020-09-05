@@ -5,7 +5,7 @@
     <nav class="menu">
 
         <div>
-            <a href="{{url('/')}}/pano">Welcome Area<br>& Explore Magna Careers</a>
+            <a href="{{url('/')}}/showroom">Welcome Area<br>& Explore Magna Careers</a>
             <a href="{{url('/')}}/active-aerodynamics" {{$category === 'active-aerodynamics' ? 'class="active"' : ''}}>Active Aerodynamics</a>
             <a href="{{url('/')}}/advanced-driver">Advanced Driver Assistance Systems</a>
             <a href="{{url('/')}}/body-exteriors">Body Exteriors & Structures</a>

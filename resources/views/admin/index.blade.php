@@ -178,7 +178,7 @@
                             @foreach($videos_by_duration as $item)
                                 <li class="mdl-list__item">
                                     {{--<span class="mdl-list__item-primary-content">{{strlen($item->file_name) > 15 ? substr($item->file_name, 0, 14) . '...': $item->file_name}}</span>--}}
-                                    <span class="mdl-list__item-primary-content">{{$item->file_name}}</span>
+                                    <span class="mdl-list__item-primary-content" data-text="{{$item->file_name}}">{{$item->file_name}}</span>
                                     <span class="mdl-list__item-secondary-action">{{floor($item->duration_in_sec / 60) . 'm ' . $item->duration_in_sec % 60 . 's'}}</span>
                                 </li>
                             @endforeach
@@ -202,7 +202,7 @@
                             @foreach($pdfs_by_count as $item)
                                 <li class="mdl-list__item">
                                     {{--<span class="mdl-list__item-primary-content">{{strlen($item->file_name) > 15 ? substr($item->file_name, 0, 14) . '...': $item->file_name}}</span>--}}
-                                    <span class="mdl-list__item-primary-content">{{$item->file_name}}</span>
+                                    <span class="mdl-list__item-primary-content" data-text="{{$item->file_name}}">{{$item->file_name}}</span>
                                     <span class="mdl-list__item-secondary-action">{{$item->download_count}}</span>
                                 </li>
                             @endforeach
@@ -355,7 +355,10 @@
 <script>
     function adjustText() {
         $('.mdl-list__item span.mdl-list__item-primary-content').each(function () {
-            var text = $(this).text();
+            var text = $(this).attr("data-text");
+            if (!text) {
+                return;
+            }
             if ($(this).html().includes('material-icons')) {
                 return;
             }
@@ -363,7 +366,7 @@
             // console.log(text.length, width);
             if (width / text.length < 10) {
                 // console.log($(this).text(), $(this).width());
-                $(this).text(text.substr(0, parseInt(width / 10)) + '...');
+                $(this).text(text.substr(0, parseInt(width / 15)) + '...');
             }
         })
     }

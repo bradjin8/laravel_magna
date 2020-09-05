@@ -21,7 +21,7 @@
 
 <body class="multiple-scenes">
 
-<a href="{{url('/')}}/pano"><img class="main-logo" src="{{url('/public/front')}}/img/magna-logo.png"></a>
+<a href="{{url('/')}}/showroom"><img class="main-logo" src="{{url('/public/front')}}/img/magna-logo.png"></a>
 
 <div id="pano"></div>
 
