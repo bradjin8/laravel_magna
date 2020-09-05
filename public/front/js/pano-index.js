@@ -147,7 +147,7 @@
                 { perspective: { radius: 1530, extraTransforms: "rotateX(6deg) rotateY(-6deg) rotateZ(0deg)" }});
 
             container.createHotspot(document.getElementById('intelligent-lighting-overlay'), { yaw: 10.78, pitch: 0.165 },
-                { perspective: { radius: 1220, extraTransforms: "rotateX(-7deg) rotateY(-9deg) rotateZ(1deg)" }});
+                { perspective: { radius: 1340, extraTransforms: "rotateX(-7deg) rotateY(-9deg) rotateZ(1deg)" }});
 
         }
 

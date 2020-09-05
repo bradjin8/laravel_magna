@@ -48,9 +48,9 @@ CREATE TABLE IF NOT EXISTS `$schemaName`.`track_records` (
 
 CREATE TABLE IF NOT EXISTS `$schemaName`.`visitors` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `relationship` varchar(100) COLLATE $collation NOT NULL,
-  `country` varchar(20) COLLATE $collation NOT NULL,
-  `how` varchar(100) COLLATE $collation NOT NULL,
+  `relationship` varchar(100) COLLATE $collation DEFAULT '',
+  `country` varchar(20) COLLATE $collation DEFAULT '',
+  `how` varchar(100) COLLATE $collation DEFAULT '',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)

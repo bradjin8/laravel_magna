@@ -34,71 +34,71 @@
 <img data-link-to="https://www.magna.com/company/careers" id="magna-careers" class="external-link-blank"
      src="{{url('/public/front')}}/content/welcome-desk/magna-careers.jpg">
 
-<video data-link-to="{{url('/category')}}/complete-vehicles" id="complete-vehicles-screen-sm" width="" class="screen"
+<video data-link-to="{{url('/')}}/complete-vehicles" id="complete-vehicles-screen-sm" width="" class="screen"
        muted autoplay plays-inline loop>
     <source src="{{url('/public/front/media')}}/complete-vehicles-link.mp4" type="video/mp4">
 </video>
 
-<video data-link-to="{{url('/category')}}/seat-of-the-future" id="seat-of-the-future-screen-sm" width=""
+<video data-link-to="{{url('/')}}/seat-of-the-future" id="seat-of-the-future-screen-sm" width=""
        class="screen shadow" muted autoplay plays-inline loop>
     <source src="{{url('/public/front/media')}}/seat-of-the-future-link.mp4" type="video/mp4">
 </video>
 
 <!-- Left -->
 <!-- Body Exteriors -->
-<video data-link-to="{{url('/category')}}/body-exteriors" id="body-exteriors-screen" class="screen" width="" muted
+<video data-link-to="{{url('/')}}/body-exteriors" id="body-exteriors-screen" class="screen" width="" muted
        autoplay plays-inline loop>
     <source src="{{url('/public/front/media')}}/body-exteriors-link.mp4" type="video/mp4">
 </video>
 
-<img data-link-to="{{url('/category')}}/body-exteriors" id="body-exteriors-overlay" class="external-link"
+<img data-link-to="{{url('/')}}/body-exteriors" id="body-exteriors-overlay" class="external-link"
      src="{{url('/public/front')}}/img/body-exteriors.png">
 
 <!-- Complete Vehicles -->
-<video data-link-to="{{url('/category')}}/complete-vehicles" id="complete-vehicles-screen" class="screen" width="" muted
+<video data-link-to="{{url('/')}}/complete-vehicles" id="complete-vehicles-screen" class="screen" width="" muted
        autoplay plays-inline loop>
     <source src="{{url('/public/front/media')}}/complete-vehicles-link.mp4" type="video/mp4">
 </video>
 
 <!-- Seat of the Future -->
-<video data-link-to="{{url('/category')}}/seat-of-the-future" id="seat-of-the-future-screen" class="screen shadow"
+<video data-link-to="{{url('/')}}/seat-of-the-future" id="seat-of-the-future-screen" class="screen shadow"
        width="" muted autoplay plays-inline loop>
     <source src="{{url('/public/front/media')}}/seat-of-the-future-link.mp4" type="video/mp4">
 </video>
 
 <!-- Intelligent Lighting -->
-<video data-link-to="{{url('/category')}}/intelligent-lighting" id="intelligent-lighting-screen" class="screen shadow"
+<video data-link-to="{{url('/')}}/intelligent-lighting" id="intelligent-lighting-screen" class="screen shadow"
        width="" muted autoplay plays-inline loop>
     <source src="{{url('/public/front/media')}}/intelligent-lighting-link.mp4" type="video/mp4">
 </video>
 
-<img data-link-to="{{url('/category')}}/intelligent-lighting" id="intelligent-lighting-overlay"
+<img data-link-to="{{url('/')}}/intelligent-lighting" id="intelligent-lighting-overlay"
      class="screen external-link" src="{{url('/public/front')}}/img/intelligent-lighting-overlay.png">
 
 <!-- Right -->
 <!-- Advanced Driver -->
-<video data-link-to="{{url('/category')}}/advanced-driver" id="advanced-driver-screen" class="screen shadow" width=""
+<video data-link-to="{{url('/')}}/advanced-driver" id="advanced-driver-screen" class="screen shadow" width=""
        muted autoplay plays-inline loop>
     <source src="{{url('/public/front/media')}}/advanced-driver-link.mp4" type="video/mp4">
 </video>
 
-<img data-link-to="{{url('/category')}}/advanced-driver" id="advanced-driver-overlay" class="external-link"
+<img data-link-to="{{url('/')}}/advanced-driver" id="advanced-driver-overlay" class="external-link"
      src="{{url('/public/front')}}/img/advanced-driver-overlay.png">
 
 <!-- Active Aerodynamics -->
-<video data-link-to="{{url('/category')}}/active-aerodynamics" id="active-aerodynamics-screen" class="screen shadow"
+<video data-link-to="{{url('/')}}/active-aerodynamics" id="active-aerodynamics-screen" class="screen shadow"
        width="" muted autoplay plays-inline loop>
     <source src="{{url('/public/front/media')}}/active-aerodynamics-link.mp4" type="video/mp4">
 </video>
 
 <!-- Scalable Electrification -->
-<video data-link-to="{{url('/category')}}/scalable-electrification" id="scalable-electrification-screen"
+<video data-link-to="{{url('/')}}/scalable-electrification" id="scalable-electrification-screen"
        class="screen shadow" width="" muted autoplay plays-inline loop>
     <source src="{{url('/public/front/media')}}/scalable-electrification-link.mp4" type="video/mp4">
 </video>
 
 <!-- SmartAccess -->
-<video data-link-to="{{url('/category')}}/smartacesss" id="smartaccess-screen" class="screen" width="" muted autoplay
+<video data-link-to="{{url('/')}}/mechatronics" id="smartaccess-screen" class="screen" width="" muted autoplay
        plays-inline loop>
     <source src="{{url('/public/front/media')}}/smartaccess-link.mp4" type="video/mp4">
 </video>
