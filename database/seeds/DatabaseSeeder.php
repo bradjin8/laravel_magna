@@ -65,7 +65,7 @@ INSERT INTO `$schemaName`.`categories` (`id`, `name`, `slug`, `status`, `created
 (6, 'Mechatronics', 'mechatronics', 1, '2020-09-01 19:18:13', '2020-09-01 19:18:13'),
 (7, 'Scalable Electrification', 'scalable-electrification', 1, '2020-09-01 19:18:13', '2020-09-01 19:18:13'),
 (8, 'Seat of the Future', 'seat-of-the-future', 1, '2020-09-01 19:18:40', '2020-09-01 19:18:40'),
-(9, 'Welcome Desk', 'welcome-desk', 1, '2020-09-01 19:21:14', '2020-09-01 19:21:14');
+(9, 'Welcome Desk', 'welcome-desk', 0, '2020-09-01 19:21:14', '2020-09-01 19:21:14');
 ";
 
         \Illuminate\Support\Facades\DB::unprepared($query);

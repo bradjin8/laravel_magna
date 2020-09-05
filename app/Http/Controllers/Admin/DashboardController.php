@@ -42,7 +42,7 @@ class DashboardController extends Controller
     {
         $this->__checkDatabase();
 
-        $arr_categories = $this->categoryModel->all();
+        $arr_categories = $this->categoryModel->find(['status'=>1]);
 
         $this->arr_view_data['categories'] = $arr_categories;
 
@@ -50,7 +50,7 @@ class DashboardController extends Controller
         $this->arr_view_data['visitors'] = $visitors;
 
 
-        $stations = DB::select("SELECT DISTINCT ct.name as name, COUNT(ct.slug) as visit_count, SUM(tr.duration_in_sec) as duration_in_sec FROM track_records tr JOIN categories ct ON ct.id = tr.category_id AND tr.type='page' GROUP BY tr.category_id ORDER BY SUM(tr.duration_in_sec) DESC LIMIT 5;");
+        $stations = DB::select("SELECT DISTINCT ct.name as name, COUNT(ct.slug) as visit_count, SUM(tr.duration_in_sec) as duration_in_sec FROM track_records tr JOIN categories ct ON ct.id = tr.category_id AND tr.type='page' WHERE ct.status=1 GROUP BY tr.category_id ORDER BY SUM(tr.duration_in_sec) DESC LIMIT 5;");
         $this->arr_view_data['stations_by_duration'] = $stations;
 
         $videos = DB::select("SELECT DISTINCT file_name, SUM(duration_in_sec) as duration_in_sec FROM track_records WHERE type='video' GROUP BY file_name ORDER BY SUM(duration_in_sec) DESC LIMIT 5;");
@@ -74,6 +74,7 @@ class DashboardController extends Controller
                       LEFT JOIN 
                         (SELECT DISTINCT cate.id as id, tar.file_name as file_name, COUNT(tar.file_name) as download_count FROM categories cate LEFT JOIN track_records tar ON cate.id=tar.category_id AND tar.type='pdf' GROUP BY cate.id, tar.file_name) c
                         ON ctg.id = c.id
+                      WHERE ctg.status=1
                       GROUP BY ctg.id, b.file_name, c.file_name
                       ORDER BY ctg.name ASC, b.viewed_count DESC, c.download_count DESC
             ;"
